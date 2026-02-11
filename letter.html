@@ -20,7 +20,7 @@ body{
 .wrapper{max-width:820px;width:100%}
 .card{
   background:white;
-  padding:50px 40px;
+  padding:55px 45px;
   border-radius:28px;
   box-shadow:0 25px 60px rgba(0,0,0,.12);
   position:relative;
@@ -37,11 +37,35 @@ body{
 h1{
   font-family:"Playfair Display";
   font-size:38px;color:#ff4d6d;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
-.letter{font-size:18px;line-height:1.9;color:#444;text-align:left}
-.signature{margin-top:40px;font-style:italic;color:#666}
+.letter{
+  font-size:18px;
+  line-height:1.95;
+  color:#444;
+  text-align:left;
+}
+.signature{
+  margin-top:45px;
+  font-style:italic;
+  color:#666;
+}
 .heart{font-size:26px}
+
+/* BUTTON NEXT PAGE */
+.nextBtn{
+  margin-top:35px;
+  border:none;
+  padding:16px 32px;
+  border-radius:16px;
+  background:#ff4d6d;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+  transition:.3s;
+}
+.nextBtn:hover{transform:scale(1.07)}
 
 #musicBtn{
   position:fixed;
@@ -66,7 +90,6 @@ h1{
 </head>
 <body>
 
-<!-- BACKGROUND MUSIC -->
 <audio id="bgMusic" loop>
   <source src="ROS%C3%89%20-%20'Until%20I%20Found%20You%20Stephen%20Sanchez'%20Cover.mp3" type="audio/mp3">
 </audio>
@@ -79,33 +102,33 @@ h1{
     <h1>Happy Valentine’s Day, My Favorite Human 💌</h1>
 
     <div class="letter">
-      This is the first Valentine’s Day i get to spend with you,
-      and i never knew how to celebrate it properly…
-      because every single day with you already feels like Valentine’s Day.
+      This is the first Valentine’s Day i get to spend with you,  
+      and i never knew how to celebrate it properly…  
+      because every single day with you already feels like Valentine’s Day.  
       <br><br>
-      It’s crazy to think that this is our 5th month of knowing each other.
-      Time moves so incredibly fast when i’m with you
-      and i love every second of it.
+      It’s crazy to think that this is our 5th month of knowing each other.  
+      Time moves so incredibly fast when i’m with you,  
+      and i love every second of it.  
       <br><br>
-      We’ve gone through so many things together in these months.
-      The happy days, the sad days, and everything in between.
-      And somehow, we still choose each other until today.
-      For that, i'm deeply grateful.
-      Thank you for staying and for holding on.
+      We’ve gone through so many things together in these months,  
+      the happy days, the sad days, and everything in between.  
+      And somehow, we still choose each other today.  
+      For that, i’m deeply grateful.  
+      Thank you for staying and for holding on.  
       <br><br>
-      Thank you for coming into my life.
-      Thank you for being there for me in your own beautiful way,
-      the way that always makes my days feel warmer and brighter.
-      Thank you for becoming the safest place i can come home to.
+      Thank you for coming into my life.  
+      Thank you for being there for me in your own beautiful way,  
+      the way that always makes my days feel warmer and brighter.  
+      Thank you for becoming the safest place i can come home to.  
       <br><br>
-      On our first Valentine’s Day, i may not be able to take you
-      to a romantic dinner or give you flowers like others do.
-      But i want you to know that you are loved
-      in the most sincere way i know how.
-      Imperfect, but real. Simple, but wholehearted.
+      On our first Valentine’s Day, i may not be able to take you  
+      to a romantic dinner or give you flowers like others do.  
+      But i want you to know that you are loved  
+      in the most sincere way i know how.  
+      Imperfect but real. Simple but wholehearted.  
       <br><br>
-      Happy Valentine’s Day, bby!!!
-      I hope this year and the years after,
+      Happy Valentine’s Day, baby.  
+      I hope this year and the years after,  
       we will still have many stories to celebrate together.
     </div>
 
@@ -114,6 +137,8 @@ h1{
       With a heart that will always choose you 🤍
     </div>
 
+    <button class="nextBtn" onclick="nextPage()">See Our Memories 📸</button>
+
   </div>
 </div>
 
@@ -121,12 +146,10 @@ h1{
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
 
-// autoplay setelah user klik layar (biar jalan di HP & Chrome)
 document.addEventListener("click", () => {
   music.play();
 }, { once: true });
 
-// tombol mute/unmute
 btn.onclick = () => {
   if(music.paused){
     music.play();
@@ -136,6 +159,10 @@ btn.onclick = () => {
     btn.innerHTML = "🔇";
   }
 };
+
+function nextPage(){
+  window.location.href = "memories.html";
+}
 </script>
 
 </body>
